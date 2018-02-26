@@ -19,7 +19,7 @@
     }
     connect() {
       console.log('to connect to ' + TARGET_NAME);
-      let options = {filters:[{name:[ TARGET_NAME ]}],
+      let options = {filters:[{services:[ NUS_SERVICE_UUID ]}],
                      optionalServices: ['battery_service']};
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
