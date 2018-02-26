@@ -5,9 +5,9 @@
   let decoder = new TextDecoder('utf-8');
 
   const TARGET_NAME = 'LightingMesh';
-  const NUS_SERVICE_UUID = '6E400001-B5A3-F393-E0A9-E50E24DCCA9E';
-  const NUS_TX_UUID = '6E400002-B5A3-F393-E0A9-E50E24DCCA9E';
-  const NUS_RX_UUID = '6E400003-B5A3-F393-E0A9-E50E24DCCA9E';
+  const NUS_SERVICE_UUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
+  const NUS_TX_UUID = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
+  const NUS_RX_UUID = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
 
   const GAP_SERVICE_UUID = 0x1800;
   const DEVICE_NAME_UUID = 0x2A00;
