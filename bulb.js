@@ -46,7 +46,8 @@
         .then(() => [r,g,b]);
       });
     }
-
+  }
+  
   window.playbulb = new Playbulb();
 
 })();
