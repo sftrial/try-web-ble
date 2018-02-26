@@ -1,12 +1,11 @@
 document.querySelector('#connect').addEventListener('click', event => {
   document.querySelector('#state').classList.add('connecting');
-  playbulbCandle.connect()
+  playbulb.connect()
   .then(() => {
-    console.log(playbulbCandle.device);
+    console.log(playbulb.device);
     document.querySelector('#state').classList.remove('connecting');
     document.querySelector('#state').classList.add('connected');
-    return playbulbCandle.getDeviceName().then(handleDeviceName)
-    .then(() => playbulbCandle.getBatteryLevel().then(handleBatteryLevel));
+    return playbulb.getDeviceName().then(handleDeviceName)
   })
   .catch(error => {
     console.error('Argh!', error);
@@ -17,21 +16,18 @@ function handleDeviceName(deviceName) {
   document.querySelector('#deviceName').value = deviceName;
 }
 
-function handleBatteryLevel(batteryLevel) {
-  document.querySelector('#batteryLevel').textContent = batteryLevel + '%';
-}
 
 function changeColor() {
   var effect = document.querySelector('[name="effectSwitch"]:checked').id;
   switch(effect) {
     case 'noEffect':
-      playbulbCandle.setColor(r, g, b).then(onColorChanged);
+      playbulb.setColor(r, g, b).then(onColorChanged);
       break;
   }
 }
 
 document.querySelector('#deviceName').addEventListener('input', event => {
-  playbulbCandle.setDeviceName(event.target.value)
+  playbulb.setDeviceName(event.target.value)
   .then(() => {
     console.log('Device name changed to ' + event.target.value);
   })
@@ -90,8 +86,3 @@ img.onload = function() {
 }
 
 document.querySelector('#noEffect').addEventListener('click', changeColor);
-document.querySelector('#candleEffect').addEventListener('click', changeColor);
-document.querySelector('#flashing').addEventListener('click', changeColor);
-document.querySelector('#pulse').addEventListener('click', changeColor);
-document.querySelector('#rainbow').addEventListener('click', changeColor);
-document.querySelector('#rainbowFade').addEventListener('click', changeColor);

@@ -55,16 +55,6 @@ body.connecting #loading {
   outline: none;
   margin: 12px 0;
 }
-#batteryLevel {
-  background-color: #222222;
-  margin: 12px 0;
-  padding: 12px;
-  color: rgb(169, 169, 169);
-  border-radius: 4px;
-}
-#batteryLevel::before {
-  content: 'Battery: ';
-}
 #connect {
   color: white;
   background-color: #4CAF50;

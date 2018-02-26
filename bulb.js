@@ -11,7 +11,7 @@
   const GAP_SERVICE_UUID = 0x1800;
   const DEVICE_NAME_UUID = 0x2A00;
 
-  class PlaybulbCandle {
+  class Playbulb {
     constructor() {
       this.device = null;
       this._isEffectSet = false;
@@ -45,6 +45,6 @@
       });
     }
 
-  window.playbulbCandle = new PlaybulbCandle();
+  window.playbulb = new Playbulb();
 
 })();
