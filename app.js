@@ -1,6 +1,5 @@
 document.querySelector('#connect').addEventListener('click', event => {
   document.querySelector('#state').classList.add('connecting');
-  console.error('connect button clicked');
   playbulb.connect()
   .then(() => {
     console.log(playbulb.device);
