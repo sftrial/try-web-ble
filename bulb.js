@@ -4,6 +4,7 @@
   let encoder = new TextEncoder('utf-8');
   let decoder = new TextDecoder('utf-8');
 
+  const TARGET_NAME = 'LightingMesh';
   const NUS_SERVICE_UUID = '6E400001B5A3F393E0A9E50E24DCCA9E';
   const NUS_TX_UUID = '6E400002B5A3F393E0A9E50E24DCCA9E';
   const NUS_RX_UUID = '6E400003B5A3F393E0A9E50E24DCCA9E';
@@ -17,7 +18,7 @@
       this._isEffectSet = false;
     }
     connect() {
-      let options = {filters:[{services:[ NUS_SERVICE_UUID ]}],
+      let options = {filters:[{name:[ TARGET_NAME ]}],
                      optionalServices: ['battery_service']};
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
