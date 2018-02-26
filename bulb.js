@@ -18,6 +18,7 @@
       this._isEffectSet = false;
     }
     connect() {
+      console.log('to connect to ' + TARGET_NAME);
       let options = {filters:[{name:[ TARGET_NAME ]}],
                      optionalServices: ['battery_service']};
       return navigator.bluetooth.requestDevice(options)
