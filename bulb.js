@@ -5,9 +5,9 @@
   let decoder = new TextDecoder('utf-8');
 
   const TARGET_NAME = 'LightingMesh';
-  const NUS_SERVICE_UUID = '6E400001B5A3F393E0A9E50E24DCCA9E';
-  const NUS_TX_UUID = '6E400002B5A3F393E0A9E50E24DCCA9E';
-  const NUS_RX_UUID = '6E400003B5A3F393E0A9E50E24DCCA9E';
+  const NUS_SERVICE_UUID = '6E400001-B5A3-F393-E0A9-E50E24DCCA9E';
+  const NUS_TX_UUID = '6E400002-B5A3-F393-E0A9-E50E24DCCA9E';
+  const NUS_RX_UUID = '6E400003-B5A3-F393-E0A9-E50E24DCCA9E';
 
   const GAP_SERVICE_UUID = 0x1800;
   const DEVICE_NAME_UUID = 0x2A00;
@@ -19,7 +19,7 @@
     }
     connect() {
       console.log('to connect to ' + TARGET_NAME);
-      let options = {filters:[{name:[ TARGET_NAME ]}],
+      let options = {filters:[{name: [ TARGET_NAME ]}],
                      optionalServices: [ NUS_SERVICE_UUID ]};
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
