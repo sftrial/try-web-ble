@@ -36,10 +36,10 @@
         return decoder.decode(data);
       });
     }
-    setColor(r, g, b) {
+    setColor(id, r, g, b) {
       return Promise.resolve()
       .then(() => {
-        let data = new Uint8Array([0x00, 0x00, 0x03, 0x01, r, g, b]);
+        let data = new Uint8Array([0x00, id, 0x03, 0x01, r, g, b]);
         return this.device.gatt.getPrimaryService(NUS_SERVICE_UUID)
         .then(service => service.getCharacteristic(NUS_TX_UUID))
         .then(characteristic => characteristic.writeValue(data))

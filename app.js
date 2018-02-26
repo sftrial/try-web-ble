@@ -6,36 +6,45 @@ document.querySelector('#connect').addEventListener('click', event => {
     console.log(playbulb.device);
     document.querySelector('#state').classList.remove('connecting');
     document.querySelector('#state').classList.add('connected');
-    return playbulb.getDeviceName().then(handleDeviceName)
   })
   .catch(error => {
     console.error('Argh!', error);
   });
 });
-
-function handleDeviceName(deviceName) {
-  document.querySelector('#deviceName').value = deviceName;
-}
 
 
 function changeColor() {
-  var effect = document.querySelector('[name="effectSwitch"]:checked').id;
+  var effect = document.querySelector('[name="lightSwitch"]:checked').id;
   switch(effect) {
-    case 'noEffect':
-      playbulb.setColor(r, g, b).then(onColorChanged);
+    case 'Light0':
+      playbulb.setColor(0x00, r, g, b).then(onColorChanged);
+      break;
+    case 'Light1':
+      playbulb.setColor(0x01, r, g, b).then(onColorChanged);
+      break;
+    case 'Light2':
+      playbulb.setColor(0x02, r, g, b).then(onColorChanged);
+      break;
+    case 'Light3':
+      playbulb.setColor(0x03, r, g, b).then(onColorChanged);
+      break;
+    case 'Light4':
+      playbulb.setColor(0x04, r, g, b).then(onColorChanged);
+      break;
+    case 'Light5':
+      playbulb.setColor(0x05, r, g, b).then(onColorChanged);
+      break;
+    case 'Group1':
+      playbulb.setColor(0x0b, r, g, b).then(onColorChanged);
+      break;
+    case 'Group2':
+      playbulb.setColor(0x0c, r, g, b).then(onColorChanged);
+      break;
+    case 'All':
+      playbulb.setColor(0x0a, r, g, b).then(onColorChanged);
       break;
   }
 }
-
-document.querySelector('#deviceName').addEventListener('input', event => {
-  playbulb.setDeviceName(event.target.value)
-  .then(() => {
-    console.log('Device name changed to ' + event.target.value);
-  })
-  .catch(error => {
-    console.error('Argh!', error);
-  });
-});
 
 var r = g = b = 255;
 
