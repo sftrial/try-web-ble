@@ -8,6 +8,7 @@ document.querySelector('#connect').addEventListener('click', event => {
   })
   .catch(error => {
     console.error('Argh!', error);
+    document.querySelector('#state').classList.remove('connecting');
   });
 });
 
@@ -86,8 +87,8 @@ img.onload = function() {
     context.beginPath();
     //context.arc(x, y + 2, 10 * devicePixelRatio, 0, 2 * Math.PI, false);
     context.arc(x, y + 2, 5 * devicePixelRatio, 0, 2 * Math.PI, false);
-    //context.shadowColor = '#333';
-    //context.shadowBlur = 4 * devicePixelRatio;
+    context.shadowColor = '#d3d3d3';
+    context.shadowBlur = 4 * devicePixelRatio;
     context.lineWidth = 0.5;
     context.fillStyle = 'white';
     context.fill();

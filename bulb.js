@@ -25,6 +25,7 @@
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
         this.device = device;
+        device.addEventListener('gattserverdisconnected', onDisconnected);
         return device.gatt.connect();
       });
     }
@@ -52,3 +53,11 @@
   window.playbulb = new Playbulb();      
 
 })();
+
+
+function onDisconnected(event) {
+  // Object event.target is Bluetooth Device getting disconnected.
+  console.log('> Bluetooth Device disconnected');
+  document.querySelector('#state').classList.remove('connected');
+}
+
