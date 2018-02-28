@@ -77,9 +77,9 @@ img.onload = function() {
     var y = Math.round((evt.clientY - rect.top) * devicePixelRatio);
     var data = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
-    r = data[((canvas.width * y) + x) * 2];
-    g = data[((canvas.width * y) + x) * 2 + 1];
-    b = data[((canvas.width * y) + x) * 2 + 2];
+    r = data[((canvas.width * y) + x) * 4];
+    g = data[((canvas.width * y) + x) * 4 + 1];
+    b = data[((canvas.width * y) + x) * 4 + 2];
 
     changeColor();
 
