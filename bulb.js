@@ -24,7 +24,6 @@
                      optionalServices: [ NUS_SERVICE_UUID, GAP_SERVICE_UUID ]};
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
-        device.addEventListener('gattserverdisconnected', onDisconnected);
         this.device = device;
         return device.gatt.connect();
       });
