@@ -88,7 +88,7 @@ img.onload = function() {
     context.arc(x, y + 2, 5 * devicePixelRatio, 0, 2 * Math.PI, false);
     //context.shadowColor = '#333';
     //context.shadowBlur = 4 * devicePixelRatio;
-    ctx.lineWidth = 0.5;
+    context.lineWidth = 0.5;
     context.fillStyle = 'white';
     context.fill();
   });
