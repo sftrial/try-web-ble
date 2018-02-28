@@ -17,12 +17,21 @@
       this.device = null;
       this._isEffectSet = false;
     }
+    
+    function onDisconnected(event) {
+      let device = event.target;
+      console.log('Device ' + device.name + ' is disconnected.');
+      document.querySelector('#state').classList.remove('connected');
+      document.querySelector('#state').classList.add('connecting');
+    }
+    
     connect() {
       console.log('to connect to ' + TARGET_NAME);
       let options = {filters:[{name: [ TARGET_NAME ]}],
                      optionalServices: [ NUS_SERVICE_UUID, GAP_SERVICE_UUID ]};
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
+        device.addEventListener('gattserverdisconnected', onDisconnected);
         this.device = device;
         return device.gatt.connect();
       });
