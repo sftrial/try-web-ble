@@ -81,14 +81,14 @@ img.onload = function() {
     g = data[((canvas.width * y) + x) * 4 + 1];
     b = data[((canvas.width * y) + x) * 4 + 2];
 
-    //changeColor();
+    changeColor();
 
     context.beginPath();
-    context.arc(x, y + 2, 10 * devicePixelRatio, 0, 2 * Math.PI, false);
+    //context.arc(x, y + 2, 10 * devicePixelRatio, 0, 2 * Math.PI, false);
+    context.arc(x, y + 2, 5 * devicePixelRatio, 0, 2 * Math.PI, false);
     context.shadowColor = '#333';
     context.shadowBlur = 4 * devicePixelRatio;
-    //context.fillStyle = 'white';
-    context.fillStyle = 'black';
+    context.fillStyle = 'white';
     context.fill();
   });
 
