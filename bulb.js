@@ -25,8 +25,20 @@
       return navigator.bluetooth.requestDevice(options)
       .then(device => {
         this.device = device;
+        device.addEventListener('gattserverdisconnected', onDisconnected);
         return device.gatt.connect();
       });
+    }
+    disconnect() {
+      if (!this.device) {
+        return;
+      }
+      console.log('Disconnecting from Bluetooth Device...');
+      if (this.device.gatt.connected) {
+        this.device.gatt.disconnect();
+      } else {
+        console.log('> Bluetooth Device is already disconnected');
+      }        
     }
     getDeviceName() {
       return this.device.gatt.getPrimaryService(GAP_SERVICE_UUID)
@@ -52,3 +64,11 @@
   window.playbulb = new Playbulb();      
 
 })();
+
+
+function onDisconnected(event) {
+  // Object event.target is Bluetooth Device getting disconnected.
+  console.log('> Bluetooth Device disconnected');
+  document.querySelector('#state').classList.remove('connected');
+}
+

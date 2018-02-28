@@ -73,3 +73,9 @@ body.connecting #loading {
     margin-left: 40px;
     font-size: 20px;
 }
+#disconnect {
+  color: white;
+  background-color: #4CAF50;
+  width: 100%;
+  font-weight: bold;
+}
