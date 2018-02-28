@@ -86,8 +86,9 @@ img.onload = function() {
     context.beginPath();
     //context.arc(x, y + 2, 10 * devicePixelRatio, 0, 2 * Math.PI, false);
     context.arc(x, y + 2, 5 * devicePixelRatio, 0, 2 * Math.PI, false);
-    //context.shadowColor = '#333';
-    //context.shadowBlur = 4 * devicePixelRatio;
+    context.shadowColor = '#333';
+    context.shadowBlur = 4 * devicePixelRatio;
+    ctx.lineWidth = 0.01;
     context.fillStyle = 'white';
     context.fill();
   });
