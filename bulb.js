@@ -50,14 +50,6 @@
     }
   }
   
-      
-  function onDisconnected(event) {
-    let device = event.target;
-    console.log('Device ' + device.name + ' is disconnected.');
-    document.querySelector('#state').classList.remove('connected');
-    document.querySelector('#state').classList.add('connecting');
-  }
-  
-  window.playbulb = new Playbulb();
+  window.playbulb = new Playbulb();      
 
 })();
