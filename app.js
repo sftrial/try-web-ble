@@ -94,4 +94,13 @@ img.onload = function() {
   context.drawImage(img, 0, 0, canvas.width, canvas.height);
 }
 
-document.querySelector('#noEffect').addEventListener('click', changeColor);
+document.querySelector('#All').addEventListener('click', changeColor);
+document.querySelector('#Group1').addEventListener('click', changeColor);
+document.querySelector('#Group2').addEventListener('click', changeColor);
+document.querySelector('#Light0').addEventListener('click', changeColor);
+document.querySelector('#Light1').addEventListener('click', changeColor);
+document.querySelector('#Light2').addEventListener('click', changeColor);
+document.querySelector('#Light3').addEventListener('click', changeColor);
+document.querySelector('#Light4').addEventListener('click', changeColor);
+document.querySelector('#Light5').addEventListener('click', changeColor);
+
