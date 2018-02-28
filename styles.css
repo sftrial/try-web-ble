@@ -70,5 +70,5 @@ body.connecting #loading {
 }
 #lightSelection {
     margin: 30px;
-    letter-spacing: -0.02em;
+    font-size: 20px;
 }
