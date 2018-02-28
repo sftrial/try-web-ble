@@ -18,13 +18,6 @@
       this._isEffectSet = false;
     }
     
-    function onDisconnected(event) {
-      let device = event.target;
-      console.log('Device ' + device.name + ' is disconnected.');
-      //document.querySelector('#state').classList.remove('connected');
-      //document.querySelector('#state').classList.add('connecting');
-    }
-    
     connect() {
       console.log('to connect to ' + TARGET_NAME);
       let options = {filters:[{name: [ TARGET_NAME ]}],
@@ -55,6 +48,14 @@
         .then(() => [r,g,b]);
       });
     }
+  }
+  
+      
+  function onDisconnected(event) {
+    let device = event.target;
+    console.log('Device ' + device.name + ' is disconnected.');
+    document.querySelector('#state').classList.remove('connected');
+    document.querySelector('#state').classList.add('connecting');
   }
   
   window.playbulb = new Playbulb();
